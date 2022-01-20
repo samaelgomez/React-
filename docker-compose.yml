@@ -1,0 +1,45 @@
+version: "3.7"
+
+services:
+  backend:
+    build: ./backend/
+    container_name: AniRentBackend
+    command: "python3 manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./backend/:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    networks:
+      - AniRent
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres 
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=AniRent
+      - POSTGRES_USER=samael
+      - POSTGRES_PASSWORD=samael
+    networks:
+      - AniRent
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "samael@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "samael"
+    logging:
+      driver: "none"
+    ports:
+      - 6969:80
+    depends_on:
+      - postgres
+    networks:
+      - AniRent
+
+networks:
+  AniRent:
