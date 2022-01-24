@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_extensions',
     'rest_framework',
+    
+    'app.apps.core',
+    'app.apps.movies',
 ]
 
 MIDDLEWARE = [
@@ -91,7 +94,7 @@ DATABASES = {
         'USER': 'samael',
         'PASSWORD': 'samael',
         'HOST': 'postgres',
-        'PORT': 5432,    
+        'PORT': 5432,
     }
 }
 
