@@ -11,13 +11,16 @@ services:
       - POSTGRES_DB=AniRent
       - POSTGRES_USER=samael
       - POSTGRES_PASSWORD=samael
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
     networks:
       - AniRent
     healthcheck:
-      test: pg_isready -U $POSTGRES_USER -d $POSTGRES_DB
+      test: pg_isready -U samael -d AniRent
       interval: 10s
       timeout: 3s
       retries: 3
+      start_period: 2s
 
   pgadmin:
     image: dpage/pgadmin4
@@ -26,6 +29,8 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: "samael@gmail.com"
       PGADMIN_DEFAULT_PASSWORD: "samael"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
     logging:
       driver: "none"
     ports:
@@ -53,3 +58,7 @@ services:
 
 networks:
   AniRent:
+
+volumes:
+  postgresql-data:
+  pgadmin-data:
