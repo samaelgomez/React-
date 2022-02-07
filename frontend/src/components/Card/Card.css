@@ -3,9 +3,9 @@
   padding: 0;
 }
 
-.container {
+.cardContainer {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   padding: 20px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -25,7 +25,7 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+      justify-content: space-between;
 }
 
 .card {
@@ -55,50 +55,6 @@
   height: 350px;
 }
 
-.wrapper .heart {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1;
-  width: 25px;
-  height: 25px;
-  color: #fff;
-}
-
-.wrapper .heart svg, .wrapper .heart path, .wrapper .heart circle {
-  stroke: currentColor;
-  fill: transparent;
-}
-
-.wrapper .heart:hover {
-  cursor: pointer;
-}
-
-.color_bg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
-}
-
-.color_bg.batman {
-  background-color: #b82d44;
-}
-
-.color_bg.blackpanter {
-  background-color: #1d1d1d;
-}
-
-.color_bg.arthur {
-  background-color: #153a82;
-}
-
-.color_bg.kashima {
-  background-color: #3f4a69;
-}
-
 .card_img {
   background-size: contain;
   background-position: center bottom;
@@ -106,7 +62,7 @@
   position: absolute;
   bottom: calc(100% - 300px);
   width: 100%;
-  height: 300px;
+  height: 350px;
   -webkit-transition: ease all .3s;
   transition: ease all .3s;
 }
@@ -129,12 +85,6 @@
   margin-bottom: 10px;
 }
 
-.cardInfo p {
-  width: 100%;
-  font-size: 14px;
-  text-align: center;
-}
-
 .action {
   width: 100%;
   display: -webkit-box;
@@ -150,39 +100,4 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-top: 15px;
-}
-
-.priceGroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.priceGroup .price {
-  font-size: 18px;
-  color: #000;
-  text-align: left;
-}
-
-.priceGroup .price.old_price {
-  color: red;
-  font-size: 15px;
-  text-decoration: line-through;
-  text-align: left;
-}
-
-.priceGroup .price.newPrice {
-  color: #000;
-  font-size: 25px;
-  font-weight: 800;
 }

@@ -1,0 +1,9 @@
+#main-nav-wrapper {
+    background: #353535;
+}
+
+#main-nav-wrapper a {
+    text-decoration: none;
+    font-size: 2vh;
+    color: green;
+}
