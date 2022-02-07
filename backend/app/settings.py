@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     
     'app.apps.core',
     'app.apps.movies',
+    'app.apps.authentication',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,11 @@ CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:3000',
     'http://localhost:3000',
 )
+
+AUTH_USER_MODEL = 'authentication.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'app.apps.authentication.backends.JWTAuthentication',
+    ),
+}
