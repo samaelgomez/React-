@@ -9,16 +9,14 @@ export default function App() {
   return (
     <div className="container">
       {/* <Header/> */}
-      <div className="row">
-        { movies.map(({ slug, cover, title, genres }) =>
-          <Card
-            key = { slug }
-            cover = { cover }
-            title = { title }
-            genres = { genres }
-          />
-        )}
-      </div>
+      { movies.map(({ slug, cover, title, genres }) =>
+        <Card
+          key = { slug }
+          cover = { cover }
+          title = { title }
+          genres = { genres }
+        />
+      )}
     </div>
   );
 }
