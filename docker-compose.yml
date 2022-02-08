@@ -1,5 +1,12 @@
 version: "3.7"
 
+volumes:
+  postgresql-data:
+  pgadmin-data:
+
+networks:
+  AniRent:
+
 services:
   postgres:
     image: postgres:latest
@@ -69,10 +76,3 @@ services:
       - backend
     networks:
       - AniRent
-
-networks:
-  AniRent:
-
-volumes:
-  postgresql-data:
-  pgadmin-data:
