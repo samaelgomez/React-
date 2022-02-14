@@ -27,7 +27,6 @@ html, body {
 .wrapper .cardContainer .top {
   height: 80%;
   width: 100%;
-  background: url(https://4.bp.blogspot.com/-TplrMd_gG_g/WInTSD0FfpI/AAAAAAAAGlk/wdIC-QR2_NUW8QMB2e8Qnfb_offaY3gggCLcB/s1600/kImY2Ve.jpg) no-repeat center center;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%;
@@ -70,8 +69,8 @@ html, body {
   border-left: solid thin rgba(0, 0, 0, 0.1);
 }
 .wrapper .cardContainer .bottom .left .buy i {
-  font-size: 30px;
-  padding: 30px;
+  font-size: 5vh;
+  padding: 1.8vh;
   color: #254053;
   transition: transform 0.5s;
 }
@@ -103,8 +102,8 @@ html, body {
   height: 50%;
 }
 .wrapper .cardContainer .bottom .right .done i {
-  font-size: 30px;
-  padding: 30px;
+  font-size: 5vh; 
+  padding: 1.8vh;
   color: white;
 }
 .wrapper .cardContainer .bottom .right .remove {
@@ -123,16 +122,19 @@ html, body {
 }
 .wrapper .cardContainer .bottom .right .remove i {
   transition: transform 0.5s;
-  font-size: 30px;
-  padding: 30px;
+  font-size: 5vh;
+  padding: 1.8vh;
   color: white;
 }
 .wrapper .cardContainer .bottom .right:hover .remove, .wrapper .cardContainer .bottom .right:hover .done {
   transform: translateY(-100%);
 }
+.bottom {
+  font-size: 1.6vh;
+}
 .wrapper .inside {
   z-index: 9;
-  background: #92879B;
+  background: #8c46c5;
   width: 140px;
   height: 140px;
   position: absolute;
@@ -144,10 +146,11 @@ html, body {
 }
 .wrapper .inside .icon {
   position: absolute;
-  right: 85px;
-  top: 85px;
-  color: white;
+  right: 8.5vh;
+  top: 7.5vh;
+  color: #fff;
   opacity: 1;
+  font-size: 3vh;
 }
 .wrapper .inside:hover {
   width: 100%;
@@ -177,9 +180,17 @@ html, body {
   text-align: left;
   width: 100%;
 }
+.wrapper .inside .contents table td{
+  padding-bottom: 1.5vh;
+}
 .wrapper .inside .contents h1, .wrapper .inside .contents p, .wrapper .inside .contents table {
   color: white;
 }
-.wrapper .inside .contents p {
-  font-size: 13px;
+
+svg {
+  margin-top: 2.3vh;
+}
+
+.icon svg {
+  margin-top: 1.2vh;
 }
