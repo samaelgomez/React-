@@ -14,7 +14,7 @@ html, body {
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0;
   transform: scale(0.95);
-  transition: box-shadow 0.5s, transform 0.5s;
+  transition: box-shadow 0.5s, transform 0.25s;
 }
 .wrapper:hover {
   transform: scale(1);

@@ -16,8 +16,7 @@ export default function Card(props) {
         clickedRef.current.classList.remove("clicked")
     }
 
-    // let cover = `/frontend/public/assets/images/${props.cover}`
-    let cover = "url(https://4.bp.blogspot.com/-TplrMd_gG_g/WInTSD0FfpI/AAAAAAAAGlk/wdIC-QR2_NUW8QMB2e8Qnfb_offaY3gggCLcB/s1600/kImY2Ve.jpg) no-repeat center center"
+    let cover = `url(/assets/images/${props.cover}) no-repeat center center`
     let title = `${props.title}`
     let genres = `${props.genres}`
     let duration = `${props.duration}`
