@@ -8,7 +8,7 @@ export default function App() {
 
   return (
     <div className="container">
-      {/* <Header/> */}
+      <Header/>
       { movies.map(({ slug, cover, title, genres, duration, rating, synopsis }) =>
         <Card
           key = { slug }

@@ -8,11 +8,11 @@ import { BiX } from "react-icons/bi"
 export default function Card(props) {
     const clickedRef = createRef();
 
-    const clickBuyButton = () => {
+    const addToCartButton = () => {
         clickedRef.current.classList.add("clicked")
     }
 
-    const clickRemoveButton = () => {
+    const removeFromCartButton = () => {
         clickedRef.current.classList.remove("clicked")
     }
 
@@ -24,30 +24,30 @@ export default function Card(props) {
     let synopsis = `${props.synopsis}`
 
     return (
-        <div className="wrapper">
-            <div className="cardContainer">
-                <div className="top" style={{ background: cover }}></div>
-                <div className="bottom" ref={ clickedRef }>
-                    <div className="left">
-                        <div className="details">
+        <div className="cardWrapper">
+            <div className="cardMainContainer">
+                <div className="cardImage" style={{ background: cover }}></div>
+                <div className="cardFooter" ref={ clickedRef }>
+                    <div className="cardInfo">
+                        <div className="cardDetails">
                             <h1>{ title }</h1>
                             <p>{ genres }</p>
                         </div>
-                        <div className="buy" onClick={ clickBuyButton }><i><BsCartPlus/></i></div>
+                        <div className="cardCart" onClick={ addToCartButton }><i><BsCartPlus/></i></div>
                     </div>
-                    <div className="right">
-                        <div className="done"><i><HiOutlineCheck/></i></div>
-                        <div className="details">
+                    <div className="cardCartMessage">
+                        <div className="cardCartMessageCheck"><i><HiOutlineCheck/></i></div>
+                        <div className="cardDetails">
                             <h1>{ title }</h1>
                             <p>Added to your cart</p>
                         </div>
-                        <div className="remove" onClick={ clickRemoveButton }><i><BiX/></i></div>
+                        <div className="cardRemove" onClick={ removeFromCartButton }><i><BiX/></i></div>
                     </div>
                 </div>
             </div>
-            <div className="inside">
-                <div className="icon"><i><AiOutlineInfoCircle/></i></div>
-                <div className="contents">
+            <div className="cardSpecs">
+                <div className="cardIcon"><i><AiOutlineInfoCircle/></i></div>
+                <div className="cardSpecsContents">
                     <table>
                         <tbody>
                             <tr>

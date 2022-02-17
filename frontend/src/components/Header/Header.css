@@ -1,9 +1,127 @@
-#main-nav-wrapper {
-    background: #353535;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#main-nav-wrapper a {
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    font-size: 62, 5%;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.page-header {
+    position: absolute;
+    top: 0%;
+    display: flex;
+    height: 6rem;
+    width: 100%;
+    background: #f7f7f7;
+}
+.page-header > .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+}
+.page-header > .header-content .logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+}
+.page-header > .header-content .logo > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.page-header > .header-content > #hamburger-checkbox {
+    display: none;
+}
+.page-header > .header-content > .hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    z-index: 2;
+    width: 1.3rem;
+    height: 1.3rem;
+}
+.page-header > .header-content > .hamburger > .line {
+    width: 100%;
+    height: 0.15rem;
+    background: #000;
+}
+.page-header > .header-content > nav {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    transition: right 0.3s ease;
+}
+.page-header > .header-content > nav > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0;
+    list-style: none;
+}
+.page-header > .header-content > nav > ul > li {
+    margin: 0.8rem 0;
+}
+.page-header > .header-content > nav > ul > li > a {
+    color: #111;
     text-decoration: none;
-    font-size: 2vh;
-    color: green;
+}
+.page-header > .header-content .page-shader {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+.page-header > .header-content > #hamburger-checkbox:checked ~ .page-shader {
+    background: #00000060;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+.page-header > .header-content > #hamburger-checkbox:checked ~ nav {
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    height: 100vh;
+    width: 15rem;
+    z-index: 1;
+    background: #dedede;
+}
+  
+@media screen and (min-width: 800px) {
+    .page-header > .header-content > .hamburger {
+      display: none;
+    }
+    .page-header > .header-content > nav {
+      position: static;
+    }
+    .page-header > .header-content > nav > ul {
+      flex-direction: row;
+    }
+    .page-header > .header-content > nav > ul > li {
+      margin: 0 0.8rem;
+    }
+    .page-header > .header-content > #hamburger-checkbox:checked ~ .page-shader {
+      display: none;
+    }
+    .page-header > .header-content > #hamburger-checkbox:checked ~ nav {
+      background: transparent;
+    }
 }

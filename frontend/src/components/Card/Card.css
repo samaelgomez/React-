@@ -1,30 +1,30 @@
 html, body {
   background: #E3E3D8;
-  font-family: sans-serif;
-  padding: 25px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-.wrapper {
-  width: 300px;
-  height: 500px;
-  background: white;
+.cardWrapper {
+  width: 30vh;
+  height: 50vh;
   margin: auto;
   position: relative;
   overflow: hidden;
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 0;
+  border-radius: 1vh;
   transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.25s;
 }
-.wrapper:hover {
+
+.cardWrapper:hover {
   transform: scale(1);
-  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0.5vh 2vh 3vh #00000033;
 }
-.wrapper .cardContainer {
+
+.cardWrapper .cardMainContainer {
   width: 100%;
   height: 100%;
 }
-.wrapper .cardContainer .top {
+
+.cardWrapper .cardMainContainer .cardImage {
   height: 80%;
   width: 100%;
   -webkit-background-size: 100%;
@@ -32,109 +32,120 @@ html, body {
   -o-background-size: 100%;
   background-size: 100%;
 }
-.wrapper .cardContainer .bottom {
+
+.cardWrapper .cardMainContainer .cardFooter {
   width: 200%;
   height: 20%;
   transition: transform 0.5s;
 }
-.wrapper .cardContainer .bottom.clicked {
+
+.cardWrapper .cardMainContainer .cardFooter.clicked {
   transform: translateX(-50%);
 }
-.wrapper .cardContainer .bottom h1 {
-  margin: 0;
-  padding: 0;
-}
-.wrapper .cardContainer .bottom p {
-  margin: 0;
-  padding: 0;
-}
-.wrapper .cardContainer .bottom .left {
+
+.cardWrapper .cardMainContainer .cardFooter .cardInfo {
   height: 100%;
   width: 50%;
-  background: #f4f4f4;
+  background: #F4F4F4;
   position: relative;
   float: left;
 }
-.wrapper .cardContainer .bottom .left .details {
-  padding: 20px;
+
+.cardWrapper .cardMainContainer .cardFooter .cardInfo .cardDetails {
+  padding: 1.7vh;
   float: left;
-  width: calc(70% - 40px);
+  width: calc(70% - 4vh);
 }
-.wrapper .cardContainer .bottom .left .buy {
+
+.cardWrapper .cardMainContainer .cardFooter .cardInfo .cardCart {
   float: right;
-  width: calc(30% - 2px);
+  width: 30%;
   height: 100%;
-  background: #f1f1f1;
+  background: #F1F1F1;
   transition: background 0.5s;
-  border-left: solid thin rgba(0, 0, 0, 0.1);
+  border-left: solid thin #0000001A;
 }
-.wrapper .cardContainer .bottom .left .buy i {
+
+.cardWrapper .cardMainContainer .cardFooter .cardInfo .cardCart i {
   font-size: 5vh;
   padding: 1.8vh;
   color: #254053;
   transition: transform 0.5s;
 }
-.wrapper .cardContainer .bottom .left .buy:hover {
+
+.cardWrapper .cardMainContainer .cardFooter .cardInfo .cardCart:hover {
   background: #A6CDDE;
 }
-.wrapper .cardContainer .bottom .left .buy:hover i {
+
+.cardWrapper .cardMainContainer .cardFooter .cardInfo .cardCart:hover i {
   transform: translateY(5px);
   color: #00394B;
 }
-.wrapper .cardContainer .bottom .right {
+
+.cardWrapper .cardMainContainer .cardFooter .cardCartMessage {
   width: 50%;
   background: #A6CDDE;
-  color: white;
+  color: #FFF;
   float: right;
   height: 200%;
   overflow: hidden;
 }
-.wrapper .cardContainer .bottom .right .details {
-  padding: 20px;
+
+.cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardDetails {
+  padding: 0.2vh;
   float: right;
-  width: calc(70% - 40px);
+  width: calc(70% - 4vh);
 }
-.wrapper .cardContainer .bottom .right .done {
-  width: calc(30% - 2px);
+
+.cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardCartMessageCheck {
+  width: 30%;
   float: left;
   transition: transform 0.5s;
-  border-right: solid thin rgba(255, 255, 255, 0.3);
+  border-right: solid thin #FFFFFF4D;
   height: 50%;
 }
-.wrapper .cardContainer .bottom .right .done i {
+
+.cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardCartMessageCheck i {
   font-size: 5vh; 
   padding: 1.8vh;
-  color: white;
+  color: #FFF;
 }
-.wrapper .cardContainer .bottom .right .remove {
-  width: calc(30% - 1px);
+
+.cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardRemove {
+  width: 30%;
   clear: both;
-  border-right: solid thin rgba(255, 255, 255, 0.3);
+  border-right: solid thin #FFFFFF4D;
   height: 50%;
   background: #BC3B59;
   transition: transform 0.5s, background 0.5s;
 }
-.wrapper .cardContainer .bottom .right .remove:hover {
+
+.cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardRemove:hover {
   background: #9B2847;
 }
-.wrapper .cardContainer .bottom .right .remove:hover i {
-  transform: translateY(5px);
+
+.cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardRemove:hover i {
+  transform: translateY(0.5vh);
 }
-.wrapper .cardContainer .bottom .right .remove i {
+
+.cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardRemove i {
   transition: transform 0.5s;
   font-size: 5vh;
   padding: 1.8vh;
-  color: white;
+  color: #FFF;
 }
-.wrapper .cardContainer .bottom .right:hover .remove, .wrapper .cardContainer .bottom .right:hover .done {
-  transform: translateY(-100%);
+
+.cardWrapper .cardMainContainer .cardFooter .cardCartMessage:hover .cardRemove, .cardWrapper .cardMainContainer .cardFooter .cardCartMessage:hover .cardCartMessageCheck {
+  transform: translateY(-103%);
 }
-.bottom {
-  font-size: 1.6vh;
+
+.cardFooter {
+  font-size: 1.35vh;
 }
-.wrapper .inside {
-  z-index: 9;
-  background: #8c46c5;
+
+.cardWrapper .cardSpecs {
+  z-index: 2;
+  background: #8C46C5;
   width: 140px;
   height: 140px;
   position: absolute;
@@ -144,7 +155,8 @@ html, body {
   transition: all 0.5s, border-radius 2s, top 1s;
   overflow: hidden;
 }
-.wrapper .inside .icon {
+
+.cardWrapper .cardSpecs .cardIcon {
   position: absolute;
   right: 8.5vh;
   top: 7.5vh;
@@ -152,38 +164,45 @@ html, body {
   opacity: 1;
   font-size: 3vh;
 }
-.wrapper .inside:hover {
+
+.cardWrapper .cardSpecs:hover {
   width: 100%;
   right: 0;
   top: 0;
   border-radius: 0;
   height: 80%;
 }
-.wrapper .inside:hover .icon {
+
+.cardWrapper .cardSpecs:hover .cardIcon {
   opacity: 0;
   right: 15px;
   top: 15px;
 }
-.wrapper .inside:hover .contents {
+
+.cardWrapper .cardSpecs:hover .cardSpecsContents {
   opacity: 1;
   transform: scale(1);
   transform: translateY(0);
 }
-.wrapper .inside .contents {
+
+.cardWrapper .cardSpecs .cardSpecsContents {
   padding: 5%;
   opacity: 0;
   transform: scale(0.5);
   transform: translateY(-200%);
   transition: opacity 0.2s, transform 0.8s;
 }
-.wrapper .inside .contents table {
+
+.cardWrapper .cardSpecs .cardSpecsContents table {
   text-align: left;
   width: 100%;
 }
-.wrapper .inside .contents table td{
+
+.cardWrapper .cardSpecs .cardSpecsContents table td {
   padding-bottom: 1.5vh;
 }
-.wrapper .inside .contents h1, .wrapper .inside .contents p, .wrapper .inside .contents table {
+
+.cardWrapper .cardSpecs .cardSpecsContents h1, .cardWrapper .cardSpecs .cardSpecsContents p, .cardWrapper .cardSpecs .cardSpecsContents table {
   color: white;
 }
 
@@ -191,6 +210,6 @@ svg {
   margin-top: 2.3vh;
 }
 
-.icon svg {
+.cardIcon svg {
   margin-top: 1.2vh;
 }

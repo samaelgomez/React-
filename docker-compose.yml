@@ -38,8 +38,6 @@ services:
       PGADMIN_DEFAULT_PASSWORD: "samael"
     volumes:
       - pgadmin-data:/var/lib/pgadmin
-    logging:
-      driver: "none"
     ports:
       - 6969:80
     depends_on:
