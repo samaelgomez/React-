@@ -26,7 +26,7 @@ export default function Card(props) {
     return (
         <div className="cardWrapper">
             <div className="cardMainContainer">
-                <div className="cardImage" style={{ background: cover }}></div>
+                <div className="cardImage" style={{ background: cover, backgroundSize: "cover" }}></div>
                 <div className="cardFooter" ref={ clickedRef }>
                     <div className="cardInfo">
                         <div className="cardDetails">
@@ -86,4 +86,4 @@ export default function Card(props) {
             </div>
         </div>
     )
-}   
+}

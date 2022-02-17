@@ -4,19 +4,19 @@ html, body {
 }
 
 .cardWrapper {
-  width: 30vh;
-  height: 50vh;
+  width: 15.4vw;
+  height: 27.5vw;
   margin: auto;
   position: relative;
   overflow: hidden;
-  border-radius: 1vh;
+  border-radius: 0.7vw;
   transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.25s;
 }
 
 .cardWrapper:hover {
   transform: scale(1);
-  box-shadow: 0.5vh 2vh 3vh #00000033;
+  box-shadow: 0.3vw 1.8vw 2.5vw #00000033;
 }
 
 .cardWrapper .cardMainContainer {
@@ -27,10 +27,6 @@ html, body {
 .cardWrapper .cardMainContainer .cardImage {
   height: 80%;
   width: 100%;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
 }
 
 .cardWrapper .cardMainContainer .cardFooter {
@@ -52,9 +48,11 @@ html, body {
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardInfo .cardDetails {
-  padding: 1.7vh;
+  padding: 1.1vw;
+  padding-left: 1vw;
   float: left;
-  width: calc(70% - 4vh);
+  text-align: center;
+  width: 70%;
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardInfo .cardCart {
@@ -67,8 +65,8 @@ html, body {
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardInfo .cardCart i {
-  font-size: 5vh;
-  padding: 1.8vh;
+  font-size: 380%;
+  padding-left: 0.9vw;
   color: #254053;
   transition: transform 0.5s;
 }
@@ -78,7 +76,7 @@ html, body {
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardInfo .cardCart:hover i {
-  transform: translateY(5px);
+  transform: translateY(0.2vw);
   color: #00394B;
 }
 
@@ -92,9 +90,11 @@ html, body {
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardDetails {
-  padding: 0.2vh;
+  padding: 0.9vw;
+  padding-left: 0.6vw;
   float: right;
-  width: calc(70% - 4vh);
+  text-align: center;
+  width: 70%;
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardCartMessageCheck {
@@ -106,8 +106,8 @@ html, body {
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardCartMessageCheck i {
-  font-size: 5vh; 
-  padding: 1.8vh;
+  font-size: 380%; 
+  padding: 1.1vw;
   color: #FFF;
 }
 
@@ -125,44 +125,48 @@ html, body {
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardRemove:hover i {
-  transform: translateY(0.5vh);
+  transform: translateY(0.25vw);
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardRemove i {
   transition: transform 0.5s;
-  font-size: 5vh;
-  padding: 1.8vh;
+  font-size: 360%;
+  padding: 1.1vw;
   color: #FFF;
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardCartMessage:hover .cardRemove, .cardWrapper .cardMainContainer .cardFooter .cardCartMessage:hover .cardCartMessageCheck {
-  transform: translateY(-103%);
+  transform: translateY(-100%);
 }
 
 .cardFooter {
-  font-size: 1.35vh;
+  font-size: 0.7vw;
+}
+
+.cardSpecsContents {
+  font-size: 0.9vw;
 }
 
 .cardWrapper .cardSpecs {
   z-index: 2;
   background: #8C46C5;
-  width: 140px;
-  height: 140px;
+  width: 7vw;
+  height: 7vw;
   position: absolute;
-  top: -70px;
-  right: -70px;
-  border-radius: 0px 0px 200px 200px;
+  top: -3.5vw;
+  right: -3.5vw;
+  border-radius: 0 0 15vw 15vw;
   transition: all 0.5s, border-radius 2s, top 1s;
   overflow: hidden;
 }
 
 .cardWrapper .cardSpecs .cardIcon {
   position: absolute;
-  right: 8.5vh;
-  top: 7.5vh;
+  right: 4.1vw;
+  top: 3.65vw;
   color: #fff;
   opacity: 1;
-  font-size: 3vh;
+  font-size: 1.5vw;
 }
 
 .cardWrapper .cardSpecs:hover {
@@ -175,8 +179,8 @@ html, body {
 
 .cardWrapper .cardSpecs:hover .cardIcon {
   opacity: 0;
-  right: 15px;
-  top: 15px;
+  right: 0.75vw;
+  top: 0.75vw;
 }
 
 .cardWrapper .cardSpecs:hover .cardSpecsContents {
@@ -199,17 +203,17 @@ html, body {
 }
 
 .cardWrapper .cardSpecs .cardSpecsContents table td {
-  padding-bottom: 1.5vh;
+  padding-bottom: 0.75vw;
 }
 
 .cardWrapper .cardSpecs .cardSpecsContents h1, .cardWrapper .cardSpecs .cardSpecsContents p, .cardWrapper .cardSpecs .cardSpecsContents table {
-  color: white;
+  color: #FFF;
 }
 
 svg {
-  margin-top: 2.3vh;
+  margin-top: 1.2vw;
 }
 
 .cardIcon svg {
-  margin-top: 1.2vh;
+  margin-top: 0.6vw;
 }
