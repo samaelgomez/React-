@@ -102,7 +102,7 @@ html, body {
   float: left;
   transition: transform 0.5s;
   border-right: solid thin #FFFFFF4D;
-  height: 50%;
+  height: 50.05%;
 }
 
 .cardWrapper .cardMainContainer .cardFooter .cardCartMessage .cardCartMessageCheck i {
