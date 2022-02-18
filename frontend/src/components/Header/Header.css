@@ -4,15 +4,29 @@
     box-sizing: border-box;
 }
 
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #27263A;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
 .headerLogo > h1 {
+    cursor: pointer;
     font-size: 1.69vw;
+}
+
+.headerLogo > a {
+    text-decoration: none;
+    color: #000;
 }
 
 .pageHeader {
     display: flex;
     height: 5vw;
     width: 100%;
-    background: #F7F7F7;
+    background: #EAEAEA;
 }
 
 .pageHeader > .headerContent {

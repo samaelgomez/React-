@@ -6,9 +6,9 @@ export default function Header() {
         <header className="pageHeader">
             <div className="headerContent">
                 <div className="headerLogo">
-                    <h1>AniRent</h1>
+                    <a href="#"><h1>AniRent</h1></a>
                 </div>
-                <input type="checkbox" id="hamburgerCheckbox" />
+                <input type="checkbox" id="hamburgerCheckbox"/>
                 <label htmlFor="hamburgerCheckbox" className="hamburger">
                     <div className="hamburgerLine"></div>
                     <div className="hamburgerLine"></div>
@@ -19,7 +19,7 @@ export default function Header() {
                         <li><a href="#">Homepage</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#">Prices</a></li>
+                        <li><a href="#">Login</a></li>
                     </ul>
                 </nav>
             </div>

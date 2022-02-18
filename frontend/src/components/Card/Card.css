@@ -1,13 +1,8 @@
-html, body {
-  background: #E3E3D8;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-
 .cardWrapper {
   width: 15.4vw;
   height: 27.5vw;
-  margin: auto;
   position: relative;
+  margin: auto;
   overflow: hidden;
   border-radius: 0.7vw;
   transform: scale(0.95);

@@ -1,6 +1,8 @@
 import './App.css';
 import Header from './components/Header'
 import Card from './components/Card';
+import Footer from './components/Footer';
+
 import useMovies from './hooks/useMovies';
 
 export default function App() {
@@ -20,6 +22,7 @@ export default function App() {
           synopsis = { synopsis }
         />
       )}
+      <Footer/>
     </div>
   );
 }
