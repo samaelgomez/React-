@@ -1,0 +1,36 @@
+.pageFooter {
+    position: absolute;
+    bottom: 0;
+    height: 4vw;
+    width: 100%;
+    background-color: #F7F7F7;
+}
+
+.footerContent {
+    height: 4vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContent > h1 {
+    font-size: 1.2vw;
+}
+
+.socialMedia {
+    height: 4vw;
+    width: 12%;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.socialMedia > i {
+    cursor: pointer;
+    color: #000;
+    font-size: 1.5vw;
+    margin-right: 1vw;
+}
