@@ -1,28 +1,24 @@
+import { lazy, Suspense } from 'react';
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 import './App.css';
+
 import Header from './components/Header'
-import Card from './components/Card';
 import Footer from './components/Footer';
 
-import useMovies from './hooks/useMovies';
+const Home = lazy(() => import("./pages/Home/home"))
 
 export default function App() {
-  const movies = useMovies()
-
   return (
-    <div className="container">
-      <Header/>
-      { movies.map(({ slug, cover, title, genres, duration, rating, synopsis }) =>
-        <Card
-          key = { slug }
-          cover = { cover }
-          title = { title }
-          genres = { genres }
-          duration = { duration }
-          rating = { rating }
-          synopsis = { synopsis }
-        />
-      )}
-      <Footer/>
+    <div className="pageContainer">
+      <BrowserRouter>
+        <Suspense fallback={null}>
+          <Header/>
+          <Routes>
+            <Route exact path='/' element={<Home/>}/>
+          </Routes>
+          <Footer/>
+        </Suspense>
+      </BrowserRouter>
     </div>
   );
 }
