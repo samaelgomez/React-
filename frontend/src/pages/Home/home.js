@@ -1,3 +1,5 @@
+import "./home.css";
+
 import Card from '../../components/Card';
 
 import useMovies from '../../hooks/useMovies';

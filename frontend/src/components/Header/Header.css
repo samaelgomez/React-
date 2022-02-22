@@ -1,25 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: #27263A;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-
-.headerLogo > h1 {
-    cursor: pointer;
-    font-size: 1.69vw;
-}
-
 .headerLogo > a {
     text-decoration: none;
     color: #000;
+}
+
+.headerLogo > a > h1 {
+    cursor: pointer;
+    font-size: 1.69vw;
 }
 
 .pageHeader {
@@ -95,6 +81,10 @@ body, html {
     width: 15vw;
     z-index: 1;
     background: #DEDEDE;
+}
+
+svg {
+    margin-top: 1.2vw;
 }
 
 @media screen and (min-width: 1200px) {
