@@ -17,10 +17,10 @@ export default function Header() {
                 </label>
                 <nav>
                     <ul>
-                        <li><a href="/">Homepage</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><Link to="/login"/>Login</li>
+                        <li><Link to="/">Homepage</Link></li>
+                        <li><Link to="/">About</Link></li>
+                        <li><Link to="/">Contact</Link></li>
+                        <li><Link to="/login">Login</Link></li>
                     </ul>
                 </nav>
             </div>

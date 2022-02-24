@@ -1,26 +1,20 @@
-import { lazy, Suspense } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Suspense } from 'react';
+import { HashRouter as Router } from 'react-router-dom';
 import './App.css';
 
-import Header from './components/Header'
-import Footer from './components/Footer';
-
-const Home = lazy(() => import("./pages/Home/home"))
-const Login = lazy(() => import("./pages/Login/login"))
+import Layout from './components/Layout';
+import AppRouter from './router/router';
 
 export default function App() {
   return (
     <div className="pageContainer">
-      <BrowserRouter>
-        <Suspense fallback={null}>
-          <Header/>
-          <Routes>
-            <Route exact path='/' element={<Home/>}/>
-            <Route exact path='login' element={<Login/>}/>
-          </Routes>
-          <Footer/>
-        </Suspense>
-      </BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Router>
+          <Layout>
+            <AppRouter/>
+          </Layout>
+        </Router>
+      </Suspense>
     </div>
   );
 }
