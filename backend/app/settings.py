@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'app.apps.core',
     'app.apps.movies',
     'app.apps.authentication',
+    'app.apps.reservation'
 ]
 
 MIDDLEWARE = [

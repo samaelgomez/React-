@@ -1,11 +1,7 @@
-export default function getMovies() {
-    return fetch("http://localhost:8000/api/movies", {
-        method: 'GET'
-    }).then(res => {
-        if (!res.ok) throw new Error('Movies response is incorrect.')
-        return res.json()
-    }).then(res => {
-        const { movies } = res
-        return movies
-    })
+import api from "../utils/api";
+
+export default async function getMovies() {
+    const response = await api.getFetch("http://localhost:8000/api/movies", "Movies response is incorrect.")
+    const { movies } = response
+    return movies
 }
