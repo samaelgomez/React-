@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'rest_framework',
     
     'app.apps.core',
-    'app.apps.movies',
     'app.apps.videostores',
+    'app.apps.shelves',
+    'app.apps.movies',
     'app.apps.authentication',
     'app.apps.reservation'
 ]
