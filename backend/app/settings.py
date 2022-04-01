@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     
     'app.apps.core',
     'app.apps.movies',
+    'app.apps.videostores',
     'app.apps.authentication',
     'app.apps.reservation'
 ]

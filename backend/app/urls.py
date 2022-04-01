@@ -6,5 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('api/', include('app.apps.movies.urls')),
+    path('api/', include('app.apps.videostores.urls')),
     path('api/', include('app.apps.authentication.urls')),
 ]
