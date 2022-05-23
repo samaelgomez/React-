@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'app.apps.videostores',
     'app.apps.shelves',
     'app.apps.movies',
-    'app.apps.authentication',
-    'app.apps.reservation'
+    'app.apps.reservations',
+    'app.apps.authentication'
 ]
 
 MIDDLEWARE = [
@@ -121,6 +121,25 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 
 # Internationalization

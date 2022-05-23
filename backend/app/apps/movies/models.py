@@ -10,6 +10,7 @@ class Movie(TimestampedModel):
     genres = models.TextField()
     synopsis = models.TextField()
     rating = models.CharField(max_length=4)
+    reserved = models.TextField(default='false')
     
     def __str__(self):
         return self.title
