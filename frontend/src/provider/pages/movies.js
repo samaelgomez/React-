@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import MoviesTable from "../components/TareasTable/moviesTable.component";
+import MoviesTable from "../components/MoviesTable/moviesTable.component";
 
 import useConsumerReducer from '../router/consumer'
 import { useUserData } from "../utils/auth.context";

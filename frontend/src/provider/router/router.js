@@ -8,6 +8,8 @@ import PanelAdmin from "../pages/paneladmin";
 
 import { useUserData } from "../utils/auth.context";
 import Logout from "../pages/logout";
+import CreateMovieForm from "../pages/createMovieForm";
+import MovieDetails from "../pages/details";
 
 const checkLogged = (state) => {
   if(!state.email){
@@ -31,6 +33,8 @@ const Router = () => {
         <Route exact path='/logout' element={state.email ? <Logout /> : <Navigate replace to={`/login`}/>}  />
         <Route exact path='/login' element={state.email ? <Navigate replace to={`/`}/> :<Login />}  />
         <Route exact path='/register' element={state.email ? <Navigate replace to={`/`}/> :<Register />}  />
+        <Route exact path='/createmovie' element={checkLogged(state) ?? checkAdmin(state) ?? <CreateMovieForm /> }  />
+        <Route exact path='/details/:slug' element={<MovieDetails /> }  />
       </Routes>
     </>
   );

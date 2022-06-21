@@ -6,7 +6,6 @@ const MovieConsumer = {
         return new Promise((resolve,reject)=>{
             try {
                 const result = Productor({query:MovieQueryModel.GET_ALL_MOVIES})
-                console.log({from:"GetAllMovies",result:result});
                 resolve(result)
             } catch (error) {
                 resolve({error:true, errorMsg:error})
@@ -16,10 +15,8 @@ const MovieConsumer = {
     CreateMovie: (movieProps) =>{
         return new Promise((resolve,reject)=>{
             try {
-                console.log(movieProps);
                 const {userData, movie} = movieProps
                 const result = Productor({type:"POST",query:MovieQueryModel.CREATE_MOVIE,token:userData.token,data:{movie:movie}})
-                console.log({from:"CreateMovie",result:result});
                 resolve(result)
             } catch (error) {
                 resolve({error:true, errorMsg:error})
@@ -29,10 +26,41 @@ const MovieConsumer = {
     UpdateMovie: (movieProps) =>{
         return new Promise((resolve,reject)=>{
             try {
-                console.log(movieProps);
                 const {userData, movie} = movieProps
                 const result = Productor({type:"PUT",query:MovieQueryModel.UPDATE_MOVIE,token:userData.token,data:{movie:movie}})
-                console.log({from:"UpdateMovie",result:result});
+                resolve(result)
+            } catch (error) {
+                resolve({error:true, errorMsg:error})
+            }
+       })
+    },
+    DeleteMovie: (movieProps) =>{
+        return new Promise((resolve,reject)=>{
+            try {
+                const {userData, movie} = movieProps
+                const result = Productor({type:"DELETE",query:MovieQueryModel.DELETE_MOVIE,token:userData.token,data:{movie:movie}})
+                resolve(result)
+            } catch (error) {
+                resolve({error:true, errorMsg:error})
+            }
+       })
+    },
+    ReserveMovie: (movieProps) =>{
+        return new Promise((resolve,reject)=>{
+            try {
+                const {userData, movie} = movieProps
+                const result = Productor({type:"PUT",query:MovieQueryModel.RESERVE_MOVIE,token:userData.token,data:{movie:movie}})
+                resolve(result)
+            } catch (error) {
+                resolve({error:true, errorMsg:error})
+            }
+       })
+    },
+    UnreserveMovie: (movieProps) =>{
+        return new Promise((resolve,reject)=>{
+            try {
+                const {userData, movie} = movieProps
+                const result = Productor({type:"PUT",query:MovieQueryModel.UNRESERVE_MOVIE,token:userData.token,data:{movie:movie}})
                 resolve(result)
             } catch (error) {
                 resolve({error:true, errorMsg:error})

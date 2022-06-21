@@ -84,7 +84,7 @@ export const MovieForm = ({ action }) => {
       setShowMessage(true);
 
       formik.resetForm();
-      window.location.href = "/";
+      window.location.href = "/paneladmin";
     },
   });
 
@@ -188,7 +188,7 @@ export const MovieForm = ({ action }) => {
 
             <Button
               type="submit"
-              label="Acceder"
+              label="Create"
               className="mt-2 p-button-warning"
             />
           </form>

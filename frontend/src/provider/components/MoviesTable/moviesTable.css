@@ -1,0 +1,13 @@
+.wrapper:first-child {
+   margin-left: 20%;
+}
+
+.wrapper:nth-child(4), .wrapper:nth-child(7){
+   margin-left: 20%;
+}
+
+.wrapper {
+   float: left;
+   width: 20%;
+   margin: 1%;
+}

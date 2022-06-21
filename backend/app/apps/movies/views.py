@@ -31,7 +31,6 @@ class MovieListAPIView(generics.ListAPIView):
         }, status=status.HTTP_200_OK)
 
 class CreateMovie(APIView):
-    # Allow any user (authenticated or not) to hit this endpoint.
     permission_classes = (IsAdminUser,)
     serializer_class = MovieSerializer
 
@@ -40,10 +39,7 @@ class CreateMovie(APIView):
         logger = logging.getLogger(__name__)
         logger.info(movie)
         logging.info(movie)
-
-        # The create serializer, validate serializer, save serializer pattern
-        # below is common and you will see it a lot throughout this course and
-        # your own work later on. Get familiar with it.
+        
         serializer = self.serializer_class(data=movie)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -51,7 +47,6 @@ class CreateMovie(APIView):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class UpdateMovie(APIView):
-    # Allow any user (authenticated or not) to hit this endpoint.
     permission_classes = (IsAdminUser,)
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
@@ -74,15 +69,57 @@ class UpdateMovie(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 class DeleteMovie(APIView):
-    # Allow any user (authenticated or not) to hit this endpoint.
     permission_classes = (IsAdminUser,)
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
     def delete(self, request):
-        serializer_context = {'request': request}
         serializer_data = request.data.get('movie', {})
         movieToDelete = Movie.objects.get(slug=serializer_data["slug"])
         movieToDelete.delete()
 
         return Response(None, status=status.HTTP_200_OK)
+
+class ReserveMovie(APIView):
+    permission_classes = (IsAuthenticated,)
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+
+    def put(self, request):
+        serializer_context = {'request': request}
+        serializer_data = request.data.get('movie', {})
+        serializer_instance = self.queryset.get(
+            slug=serializer_data["slug"]
+        )
+
+        serializer = self.serializer_class(
+            serializer_instance, 
+            context=serializer_context,
+            data=serializer_data, 
+            partial=True
+        )
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class UnreserveMovie(APIView):
+    permission_classes = (IsAuthenticated,)
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+
+    def put(self, request):
+        serializer_context = {'request': request}
+        serializer_data = request.data.get('movie', {})
+        serializer_instance = self.queryset.get(
+            slug=serializer_data["slug"]
+        )
+
+        serializer = self.serializer_class(
+            serializer_instance, 
+            context=serializer_context,
+            data=serializer_data, 
+            partial=True
+        )
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
